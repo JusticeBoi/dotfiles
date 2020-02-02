@@ -64,8 +64,9 @@ def install_and_symlink():
 #installAURdeps()
 #installAURPackages()
 #installPythonPackages()
-cleanup()
-install_and_symlink()
+#cleanup()
+#install_and_symlink()
+installZSH()
 
 print("Finished! Dont forget to enable your theme and log out")
 
