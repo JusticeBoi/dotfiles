@@ -122,6 +122,15 @@ alias vtune="source /opt/intel/vtune_amplifier_2019.8.0.604197/amplxe-vars.sh &&
 alias mountPlainDrive="udisksctl mount -b /dev/sda1"
 alias mountEncrypted="udisksctl unlock -b /dev/sda2 && udisksctl mount -b /dev/dm-0"
 
+fdgo() {
+     res=$(fd "$1" | head -n 1)
+     if [ -z "$res" ]
+     then
+         echo " couldn't find it "
+     else
+         cd $(dirname $res)
+     fi
+}
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -147,6 +156,7 @@ export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 #export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/opt/intel/mkl/lib/intel64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/opt/intel/compilers_and_libraries_2019/linux/lib/intel64:$LD_LIBRARY_PATH
+export LD_PRELOAD=/usr/local/lib/libjemalloc.so
 
 #export ANDROID_HOME=/home/oguz/sdkmanager/tools
 #export ANDROID_SDK_ROOT=/home/oguz/sdkmanager/tools/tools

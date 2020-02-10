@@ -56,6 +56,7 @@ Plugin 'lazywei/vim-matlab'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'lervag/vimtex'
 
 Plugin 'itchyny/lightline.vim'
 "let g:ycm_server_python_interpreter='/usr/bin/python2.7'
@@ -126,7 +127,7 @@ syntax on " Syntax highlighting
 "let g:ale_completion_enabled = 1
 
 let g:ale_linters_explicit = 1
-let g:ale_linters = {'python':['pylint']}
+let g:ale_linters = {'python':['pylint'], 'tex':['chktex','write-good','alex','redpen']}
 let g:ale_python_pylint_options= '--extension-pkg-whitelist=lxml --rcfile=/home/oguz/.pylintrc'
 
 let g:ale_fixers = ['autopep8', 'yapf']
@@ -353,6 +354,17 @@ function! ToggleClangd()
     endif
 endfunction
 
+let g:ale_completion_enabled = 1
+function! ToggleALeCompletion()
+    if g:ale_completion_enabled
+        let g:ale_completion_enabled = 0
+    else
+        let g:ale_completion_enabled = 1
+    endif
+endfunction
+
 nnoremap <F7> :call ToggleClangd()  <CR>
+
+nnoremap <F2> :call ToggleALeCompletion()  <CR>
 
 "let g:ycm_log_level='debug'
