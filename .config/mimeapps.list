@@ -1,0 +1,7 @@
+
+[Default Applications]
+application/csv=vim.desktop
+text/plain=vim.desktop
+application/pdf=mupdf.desktop
+application/png=mupdf.desktop
+image/png=mupdf.desktop
