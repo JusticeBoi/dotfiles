@@ -181,7 +181,6 @@ set smartcase " If there are uppercase letters, become case-sensitive.
 set incsearch " live incremental searching
 set showmatch " live match highlighting
 set hlsearch " highlight matches
-set gdefault " use the `g` flag by default.
 set number
 " allow the cursor to go anywhere in visual block mode.
 set virtualedit+=block
@@ -319,6 +318,9 @@ command W w
 command Q q 
 command Wq wq 
 
+" Added 19.03.2020
+autocmd FileType tex nnoremap <F5> :!pdflatex -interaction=nonstopmode -halt-on-error -synctex=1 %:p<CR><CR>
+
 command F YcmCompleter FixIt
 "let g:ycm_confirm_extra_conf=0
 autocmd BufEnter *.m  compiler mlint
@@ -328,10 +330,12 @@ autocmd BufEnter *.m  compiler mlint
 "
 autocmd FileType matlab map <leader>r :w<CR>:!/usr/local/MATLAB/R2019a/bin/matlab -nodesktop -nosplash -r "try, run %:p, pause, catch, end, quit" <CR> <CR>
 " nnoremap <F5> :YcmForceCompileAndDiagnostics <CR>
-nnoremap <F10> :YcmDiags <CR>
-nnoremap <F4> :YcmCompleter GoToDeclaration<CR>
-nnoremap <F5> :YcmCompleter GoToDefinition<CR>
-nnoremap <F6> :YcmCompleter GoToInclude<CR>
+
+" Changed 19.03.2020
+autocmd FileType c,cpp,hpp,h nnoremap <F10> :YcmDiags <CR>
+autocmd FileType c,cpp,hpp,h nnoremap <F4> :YcmCompleter GoToDeclaration<CR>
+autocmd FileType c,cpp,hpp,h nnoremap <F5> :YcmCompleter GoToDefinition<CR>
+autocmd FileType c,cpp,hpp,h nnoremap <F6> :YcmCompleter GoToInclude<CR>
 
 autocmd FileType python nnoremap <buffer> <F9> :exec '!/home/oguz/anaconda3/bin/python' shellescape(@%, 1)<cr>
 au BufNewFile,BufRead *.tikz set filetype=tex
@@ -368,3 +372,8 @@ nnoremap <F7> :call ToggleClangd()  <CR>
 nnoremap <F2> :call ToggleALeCompletion()  <CR>
 
 "let g:ycm_log_level='debug'
+" toggle set paste and nopaste
+set pastetoggle=<F3>
+set gdefault " use the `g` flag by default.
+vmap <leader>y :w! /tmp/vitmp<CR> 
+nmap <leader>p :r! cat /tmp/vitmp<CR>

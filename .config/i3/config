@@ -28,6 +28,9 @@ for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
 
+bindsym $mod+o exec st nnn 
+bindsym $mod+u exec dmenuunicode 
+
 #for_window [instance="ITK*"] move scratchpad
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -82,6 +85,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show drun -show-icons
+# bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+d exec rofi -show run -show-icons
 
 bindsym $mod+t            split toggle
@@ -232,8 +236,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 bindsym $mod+r mode "resize"
 
-exec --no-startup-id setxkbmap -layout de
-exec --no-startup-id setxkbmap de
+# exec --no-startup-id setxkbmap -layout de
+# exec --no-startup-id setxkbmap de
 # Media Keys
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -243,7 +247,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+z        gaps inner current plus 5
 bindsym $mod+shift+z  gaps inner current minus 5
 
-for_window [title="VLC media player"] move workspace $ws5
+# for_window [title="VLC media player"] move workspace $ws5
 #for_window [title="gdb"] move workspace $ws3
 for_window [title="ParaView*"] move workspace $ws4
 
