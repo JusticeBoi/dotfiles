@@ -33,6 +33,9 @@ set dir=~/tmp
 filetype off
 let skip_defaults_vim=1
 set viminfo=""
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 set rtp+=~/.vim/bundle/vundle.vim/
 "set rtp+=~/.fzf
@@ -127,7 +130,8 @@ syntax on " Syntax highlighting
 "let g:ale_completion_enabled = 1
 
 let g:ale_linters_explicit = 1
-let g:ale_linters = {'python':['pylint'], 'tex':['chktex','write-good','alex','redpen']}
+" let g:ale_linters = {'python':['pylint'], 'tex':['chktex','write-good','alex','redpen']}
+let g:ale_linters = {'python':['pylint'], 'tex':['chktex']}
 let g:ale_python_pylint_options= '--extension-pkg-whitelist=lxml --rcfile=/home/oguz/.pylintrc'
 
 let g:ale_fixers = ['autopep8', 'yapf']
@@ -377,3 +381,6 @@ set pastetoggle=<F3>
 set gdefault " use the `g` flag by default.
 vmap <leader>y :w! /tmp/vitmp<CR> 
 nmap <leader>p :r! cat /tmp/vitmp<CR>
+
+
+hi Normal guibg=NONE ctermbg=NONE
