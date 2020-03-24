@@ -38,7 +38,6 @@ plugins=(git
         z
         vi-mode
         archlinux
-        web-search
         extract)
         
 
@@ -129,7 +128,9 @@ else
   export VISUAL='vim'
 fi
 
+
 alias size='ncdu -x'
+alias drive='/run/media/oguz/071E-7618'
 alias h='htop'
 alias t='~/Documents/Thesis'
 alias tt='~/Documents/Thesis/thesis_latex'
@@ -175,6 +176,7 @@ fdgo() {
          cd $(dirname $res)
      fi
 }
+calc(){ echo "scale=5;" $@ | bc -l; }
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -493,3 +495,4 @@ command_not_found_handle () {
 #
 ### TO ENABLE P10K
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# alias grep='grep --color=auto --exclude-dir={.bzr, CVS, .git, .hg, .xvn, .idea,.tox} '

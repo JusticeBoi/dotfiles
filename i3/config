@@ -28,6 +28,9 @@ for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
 
+bindsym $mod+o exec st nnn 
+bindsym $mod+u exec dmenuunicode 
+
 #for_window [instance="ITK*"] move scratchpad
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -46,7 +49,7 @@ font pango:DejaVu Sans Mono 10
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-exec --no-startup-id swapoff -a
+#exec --no-startup-id swapoff -a
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -55,8 +58,8 @@ exec --no-startup-id swapoff -a
 #exec --no-startup-id telegram-desktop
 exec --no-startup-id nm-applet
 exec --no-startup-id megasync
-exec --no-startup-id st gtop 
-exec --no-startup-id st   
+#exec --no-startup-id st gtop 
+#exec --no-startup-id st   
 exec_always --no-startup-id nitrogen --restore 
 
 bindsym $mod+Return exec st
@@ -81,8 +84,9 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+Shift+d exec rofi -show run
+bindsym $mod+d exec rofi -show drun -show-icons
+# bindsym $mod+d exec dmenu_run
+bindsym $mod+Shift+d exec rofi -show run -show-icons
 
 bindsym $mod+t            split toggle
 
@@ -232,8 +236,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 bindsym $mod+r mode "resize"
 
-exec --no-startup-id setxkbmap -layout de
-exec --no-startup-id setxkbmap de
+# exec --no-startup-id setxkbmap -layout de
+# exec --no-startup-id setxkbmap de
 # Media Keys
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
@@ -243,7 +247,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+z        gaps inner current plus 5
 bindsym $mod+shift+z  gaps inner current minus 5
 
-for_window [title="VLC media player"] move workspace $ws5
+# for_window [title="VLC media player"] move workspace $ws5
 #for_window [title="gdb"] move workspace $ws3
 for_window [title="ParaView*"] move workspace $ws4
 
@@ -256,6 +260,7 @@ for_window [instance="ITK*"] floating enable
 smart_gaps on
 
 # Autolock
-exec xautolock -detectsleep -time 5 -locker "/usr/local/bin/lock_and_blur.sh" \
-  -notify 30 \
-  -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+exec_always /usr/local/bin/locker.sh
+#exec xautolock -detectsleep -time 5 -locker "/usr/local/bin/lock_and_blur.sh" \
+#  -notify 30 \
+#  -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
