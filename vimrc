@@ -379,5 +379,8 @@ set gdefault " use the `g` flag by default.
 vmap <leader>y :w! /tmp/vitmp<CR> 
 nmap <leader>p :r! cat /tmp/vitmp<CR>
 
+
+autocmd FileType markdown nnoremap <F5> :!pandoc %:p -o %:r.pdf<CR>
+
 " transparency
 hi Normal guibg=NONE ctermbg=NONE
