@@ -11,7 +11,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/oguz/.oh-my-zsh"
+export XDG_DATA_HOME="/home/oguz/.config"  
+export CCACHE_DIR="$XDG_DATA_HOME/ccache" 
+
+export ZSH="$XDG_DATA_HOME/oh-my-zsh"
+export PYLINTHOME="/home/oguz/.config/pylint"
+export _Z_DATA="$XDG_DATA_HOME/z/.z"
 autoload -U colors && colors
 #source ~/.zplug/init.zsh
 
@@ -158,8 +163,8 @@ alias p="pdflatex -interaction=nonstopmode -halt-on-error -synctex=1"
 # alias reconnect_eduroam="/home/oguz/./reconnect_to_eduroam"
 alias headphoneConnect="bluetoothctl power on && bluetoothctl connect 38:18:4C:0E:67:C2"
 alias headphoneDisconnect="bluetoothctl disconnect"
-alias cp='/usr/local/bin/cpg -g'
-alias mv='/usr/local/bin/mvg -g'
+# alias cp='/usr/local/bin/cpg -g'
+# alias mv='/usr/local/bin/mvg -g'
 #alias pandoc="/home/oguz/softwares/pandoc-2.8.1/bin/./pandoc"
 #alias itk="/home/oguz/softwares/itksnap-3.8.0-20190612-Linux-gcc64/bin/itksnap"
 alias vtune="source /opt/intel/vtune_amplifier_2019.8.0.604197/amplxe-vars.sh && sudo /opt/intel/vtune_amplifier_2019/bin64/./amplxe-gui"

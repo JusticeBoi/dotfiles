@@ -86,6 +86,7 @@ Plugin 'w0rp/ale'
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'ryanoasis/vim-devicons'
 call vundle#end() 
 filetype plugin indent on
 
@@ -133,7 +134,7 @@ syntax on " Syntax highlighting
 let g:ale_linters_explicit = 1
 " let g:ale_linters = {'python':['pylint'], 'tex':['chktex','write-good','alex','redpen']}
 let g:ale_linters = {'python':['pylint'], 'tex':['chktex']}
-let g:ale_python_pylint_options= '--extension-pkg-whitelist=lxml --rcfile=/home/oguz/.pylintrc'
+let g:ale_python_pylint_options= '--extension-pkg-whitelist=lxml --rcfile=/home/oguz/.config/pylint/.pylintrc'
 
 let g:ale_fixers = ['autopep8', 'yapf']
 let g:ale_warn_about_trailing_whitespace = 0
@@ -384,3 +385,5 @@ autocmd FileType markdown nnoremap <F5> :!pandoc %:p -o %:r.pdf<CR>
 
 " transparency
 hi Normal guibg=NONE ctermbg=NONE
+set thesaurus+=/home/oguz/.vim/spell/words.txt
+autocmd FileType markdown,tex setlocal spell
