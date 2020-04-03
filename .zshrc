@@ -139,14 +139,16 @@ alias drive='/run/media/oguz/071E-7618'
 alias h='htop'
 alias t='~/Documents/Thesis'
 alias tt='~/Documents/Thesis/thesis_latex'
-alias tr='~/Documents/Thesis/reading'
+# alias tr='~/Documents/Thesis/reading'
 alias rgrep='grep -r'
 # open
 alias o='xdg-open &>/dev/null'
 alias lrzconnect=' sudo openconnect -u ga53zeg  asa-cluster.lrz.de'
 alias prime='ssh 10.149.72.194'
+alias alarm='ssh -X 192.168.1.74'
+alias mountAlarm='sshfs 192.168.1.74:/home/oguz /home/oguz/pi'
 alias gdiff='git diff'
-alias cpu="watch -n 1 'cat /proc/cpuinfo | grep "MHz"'"
+alias cpuUsage="watch -n 1 'cat /proc/cpuinfo | grep "MHz"'"
 alias pls="sudo"
 alias confi3="vim ~/.config/i3/config"
 alias cppsearch="grep --include=\*.{cpp,hpp,h} -rnw . -e "

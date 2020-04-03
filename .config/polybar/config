@@ -213,7 +213,7 @@ warn-temperature = 85
 
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
 
 label = %temperature-c%
 label-warn = %temperature-c%

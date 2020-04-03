@@ -60,11 +60,11 @@ exec --no-startup-id nm-applet
 exec --no-startup-id megasync
 #exec --no-startup-id st gtop 
 #exec --no-startup-id st   
-exec_always --no-startup-id nitrogen --restore 
+# exec_always --no-startup-id nitrogen --restore 
 
 bindsym $mod+Return exec st
 #exec_always --no-startup-id ~/.fehbg 
-#exec_always --no-startup-id /usr/bin/feh --bg-fill '/home/oguz/.config/wallpapers/mist.png'
+# exec_always --no-startup-id feh --bg-scale '/home/oguz/.config/wallpapers/Golden-Yorkshire-Norwood-North-Yorkshire.jpg'
 #
 
 #exec nmgui
@@ -264,3 +264,4 @@ exec_always /usr/local/bin/locker.sh
 #exec xautolock -detectsleep -time 5 -locker "/usr/local/bin/lock_and_blur.sh" \
 #  -notify 30 \
 #  -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+# exec_always --no-startup-id sh /home/oguz/.config/multi_monitor.sh 

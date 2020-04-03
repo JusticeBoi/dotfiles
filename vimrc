@@ -312,7 +312,7 @@ filetype indent on
 let g:tex_flavor='latex'
 
 " let &path.="/home/oguz/Downloads/boost_1_67_0,"
-command Make !make -j6
+command Make !make -j6 <CR> <CR>
 command W w 
 command Q q 
 command Wq wq 
@@ -337,7 +337,7 @@ autocmd FileType matlab map <leader>r :w<CR>:!/usr/local/MATLAB/R2019a/bin/matla
 " Changed 19.03.2020
 autocmd FileType c,cpp,hpp,h nnoremap <F10> :YcmDiags <CR>
 autocmd FileType c,cpp,hpp,h nnoremap <F4> :YcmCompleter GoToDeclaration<CR>
-autocmd FileType c,cpp,hpp,h nnoremap <F5> :YcmCompleter GoToDefinition<CR>
+" autocmd FileType c,cpp,hpp,h nnoremap <F5> :YcmCompleter GoToDefinition<CR>
 autocmd FileType c,cpp,hpp,h nnoremap <F6> :YcmCompleter GoToInclude<CR>
 
 " autocmd FileType python nnoremap <buffer> <F9> :exec '!/home/oguz/anaconda3/bin/python' shellescape(@%, 1)<cr>
