@@ -11,6 +11,7 @@ source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 xset r rate 300 50 &	# Speed xrate up
 unclutter &		# Remove mouse when idle
 dwmblocks &		# run the remaps script, switching caps/esc and more; check it for more info
+locker &		# run the remaps script, switching caps/esc and more; check it for more info
 picom -b
 
 /home/oguz/.config/multi_monitor
