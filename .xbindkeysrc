@@ -42,13 +42,13 @@
 #"xbindkeys_show" 
 #  control+shift + q
 # Increase volume
-"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+"pactl set-sink-volume @DEFAULT_SINK@ +2000 && pkill -RTMIN+5 dwmblocks"
     XF86AudioRaiseVolume
 # Decrease volume
-"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+"pactl set-sink-volume @DEFAULT_SINK@ -2000 && pkill -RTMIN+5 dwmblocks"
     XF86AudioLowerVolume
 # Mute volume
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+"pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+5 dwmblocks"
     XF86AudioMute
 # Increase backlight
 "xbacklight -inc 10"
