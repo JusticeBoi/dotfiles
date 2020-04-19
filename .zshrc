@@ -80,7 +80,7 @@ n ()
     # stty lwrap undef
     # stty lnext undef
 
-    nnn "$@"
+    nnn -e "$@"
 
     if [ -f "$NNN_TMPFILE" ]; then
             . "$NNN_TMPFILE"
@@ -135,6 +135,7 @@ fi
 
 
 alias size='ncdu -x'
+alias make='make -s -j6 2>&1 | colout -t cmake | colout -t g++'
 alias drive='/run/media/oguz/071E-7618'
 alias h='htop'
 alias t='~/Documents/Thesis'
@@ -155,8 +156,9 @@ alias cppsearch="grep --include=\*.{cpp,hpp,h} -rnw . -e "
 alias findLatestChanged="find . -type f -exec stat --format '%Y :%y %n' "{}" \; | sort -nr | cut -d: -f2- | head"
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vim/vimrc"
-alias scs="scrot --select"
-alias sauce="source ~/.zshrc"
+alias scs="maim -s ~/Pictures/$(date +%d%m%y%H%M%S).png"
+
+alias sauce="source ~/.zshrc && source ~/.zshenv"
 # alias untar="tar xvf"
 alias py="python3.8"
 alias c="./compile_thesis"
@@ -165,6 +167,8 @@ alias p="pdflatex -interaction=nonstopmode -halt-on-error -synctex=1"
 # alias reconnect_eduroam="/home/oguz/./reconnect_to_eduroam"
 alias headphoneConnect="bluetoothctl power on && bluetoothctl connect 38:18:4C:0E:67:C2"
 alias headphoneDisconnect="bluetoothctl disconnect"
+alias mv='mv -i' 
+alias rm='rm -i'
 # alias cp='/usr/local/bin/cpg -g'
 # alias mv='/usr/local/bin/mvg -g'
 #alias pandoc="/home/oguz/softwares/pandoc-2.8.1/bin/./pandoc"

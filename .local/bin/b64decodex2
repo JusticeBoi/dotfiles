@@ -1,0 +1,6 @@
+#!/bin/sh
+
+
+xclip -selection clipboard -o  | base64 -d | base64 -d | xargs -0 $BROWSER
+
+

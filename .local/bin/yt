@@ -1,0 +1,6 @@
+#!/bin/sh
+
+
+xclip -o | xargs -0 youtube-dl -x 
+
+

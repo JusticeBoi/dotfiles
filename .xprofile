@@ -15,7 +15,8 @@ locker &		# run the remaps script, switching caps/esc and more; check it for mor
 picom -b
 
 /home/oguz/.config/multi_monitor
-xwallpaper --zoom .config/wallpapers/Golden-Yorkshire-Norwood-North-Yorkshire.jpg
+# xwallpaper --zoom .config/wallpapers/Golden-Yorkshire-Norwood-North-Yorkshire.jpg
+xwallpaper --zoom .config/wallpapers/claudio_testa_vogtsburg.jpg
 
 # This is the list for lf icons:
 export LF_ICONS="di=📁:\

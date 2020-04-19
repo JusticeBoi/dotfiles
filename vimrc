@@ -77,9 +77,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Support for easily toggling comments.
 Plugin 'tpope/vim-commentary'
 
-"Plugin 'tmhedberg/SimpylFold'
-
-"Plugin 'vim-syntastic/syntastic'
 
 Plugin 'w0rp/ale'
 
@@ -89,6 +86,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'ryanoasis/vim-devicons'
 call vundle#end() 
 filetype plugin indent on
+
 
 " In addtion to the above plugins, you'll likely need some for individual
 " non-standard syntaxes that aren't pre-bundled with vim. Here are some I use,
@@ -298,7 +296,12 @@ let g:ctrlp_regexp = 1
 
 " Finally the color scheme. Choose whichever you want from the list in the
 " link above (back up where we included the bundle of a ton of themes.)
+" colorscheme DevC++ 
+" colorscheme sf 
 colorscheme seoul256 
+" set t_Co=256
+" set t_ut=
+" colorscheme codedark
 filetype plugin on
 
 " " OPTIONAL: This enables automatic indentation as you type.

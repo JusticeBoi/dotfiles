@@ -1,5 +1,13 @@
 #!/bin/sh
 
+case $BLOCK_BUTTON in
+	2) pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+5 dwmblocks;;
+	4) pactl set-sink-volume @DEFAULT_SINK@ +2000 && pkill -RTMIN+5 dwmblocks ;;
+	5) pactl set-sink-volume @DEFAULT_SINK@ -2000 && pkill -RTMIN+5 dwmblocks ;;
+	3) notify-send "📢 Volume module" "\- Shows volume 🔊, 🔇 if muted.
+- Middle click to mute.
+- Scroll to change."
+esac
 ismuted=$(pactl list sinks | grep '^[[:space:]]Mute: ' | grep -o '[^\: ]*$')
 
 # echo $ismuted
