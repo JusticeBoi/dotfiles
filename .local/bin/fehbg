@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale '/home/oguz/.config/wallpapers/Golden-Yorkshire-Norwood-North-Yorkshire.jpg' 
