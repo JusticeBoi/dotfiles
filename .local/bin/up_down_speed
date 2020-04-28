@@ -1,0 +1,3 @@
+#!/bin/bash
+
+awk '{if(l1){print "⬇" int((($2-l1)/1024)*10)/10"kB/s","⬆ " int((($10-l2)/1024)*10)/10"kB/s"} else{l1=$2; l2=$10;}}' <(grep eno1 /proc/net/dev) <(sleep 1.0; grep eno1 /proc/net/dev)

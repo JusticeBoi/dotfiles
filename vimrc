@@ -86,6 +86,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'ryanoasis/vim-devicons'
 call vundle#end() 
 filetype plugin indent on
+" autocmd InsertEnter * norm zz
 
 
 " In addtion to the above plugins, you'll likely need some for individual
@@ -112,6 +113,7 @@ let g:lightline.component_type = {
       \ }
 
 
+let g:asmsyntax = 'nasm'
 let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 
 "let g:lightline#ale#indicator_checking = "\uf110"
@@ -334,7 +336,9 @@ autocmd BufEnter *.m  compiler mlint
 "cabbrev make <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'Make' : 'make')<CR>
 "AlterCommand make Make
 "
-autocmd FileType matlab map <leader>r :w<CR>:!/usr/local/MATLAB/R2019a/bin/matlab -nodesktop -nosplash -r "try, run %:p, pause, catch, end, quit" <CR> <CR>
+"
+
+autocmd FileType matlab map <leader>r :w<CR>:!export MESA_LOADER_DRIVER_OVERRIDE=i965; /usr/local/MATLAB/R2019b/bin/matlab -nodesktop -nosplash -r "try, run %:p, pause, catch, end, quit" <CR> 
 " nnoremap <F5> :YcmForceCompileAndDiagnostics <CR>
 
 " Changed 19.03.2020

@@ -5,6 +5,12 @@ else
   export VISUAL='vim'
 fi
 
+export XDG_DATA_HOME="/home/oguz/.config"  
+export CCACHE_DIR="$XDG_DATA_HOME/ccache" 
+
+export PYLINTHOME="$XDG_DATA_HOME/pylint"
+export _Z_DATA="$XDG_DATA_HOME/z/.z"
+
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export TERMINAL="st"
 export BROWSER="firefox"

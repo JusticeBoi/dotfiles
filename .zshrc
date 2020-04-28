@@ -17,11 +17,6 @@ _comp_options+=(globdots)
 
 fpath=(/home/oguz/.config/zsh/plugins/zsh-completions/src $fpath)
 
-export XDG_DATA_HOME="/home/oguz/.config"  
-export CCACHE_DIR="$XDG_DATA_HOME/ccache" 
-
-export PYLINTHOME="/home/oguz/.config/pylint"
-export _Z_DATA="$XDG_DATA_HOME/z/.z"
 
 
 source ~/.config/zsh/plugins/you-should-use.plugin.zsh
@@ -46,19 +41,6 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
-
-# function git_current_branch() {
-#   local ref
-#   ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
-#   local ret=$?
-#   if [[ $ret != 0 ]]; then
-#     [[ $ret == 128 ]] && return  # no git repo.
-#     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
-#   fi
-#   echo ${ref#refs/heads/}
-# }
-
-
 
 function zle-keymap-select {
   # echo ${KEYMAP}
@@ -127,9 +109,6 @@ bindkey -s '^o' 'n\n'
 #
 # export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 # source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 
 fdgo() {
      res=$(fd "$1" | head -n 1)

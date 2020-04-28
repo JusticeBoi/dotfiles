@@ -1,4 +1,4 @@
 !#/usr/sh
 
 
-/usr/local/bin/matlab -desktop
+export MESA_LOADER_DRIVER_OVERRIDE=i965; /usr/local/bin/matlab -desktop
