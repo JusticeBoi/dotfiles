@@ -26,7 +26,7 @@
 " https://github.com/gmarik/vundle
 " To install vundle, copy all the files from the repo into your respective
 " folders within ~/.vim
-set nocompatible " Fuck VI... That's for grandpas.
+" set nocompatible " Fuck VI... That's for grandpas.
 set nobackup
 set swapfile
 set dir=~/tmp
@@ -61,6 +61,7 @@ Plugin 'lazywei/vim-matlab'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'lervag/vimtex'
+Plugin 'vimwiki/vimwiki'
 
 Plugin 'itchyny/lightline.vim'
 "let g:ycm_server_python_interpreter='/usr/bin/python2.7'
@@ -164,7 +165,7 @@ set expandtab " use spaces instead of tabs.
 set smarttab " let's tab key insert 'tab stops', and bksp deletes tabs.
 set shiftround " tab / shifting moves to closest tabstop.
 set autoindent " Match indents on new lines.
-set smartindent " Intellegently dedent / indent new lines based on rules.
+" set smartindent " Intellegently dedent / indent new lines based on rules.
 
 " We have VCS -- we don't need this stuff.
 set nobackup " We have vcs, we don't need backups.
@@ -214,8 +215,8 @@ noremap <expr> k repmo#SelfKey('k', 'j')|sunmap k
 "map <expr> k repmo#Key('gk', 'gj')|sunmap k
 
 " repeat the last [count]motion or the last zap-key:
-map <expr> ; repmo#LastKey(';')|sunmap ;
-map <expr> , repmo#LastRevKey(',')|sunmap ,
+" map <expr> ; repmo#LastKey(';')|sunmap ;
+" map <expr> , repmo#LastRevKey(',')|sunmap ,
 
 " add these mappings when repeating with `;' or `,':
 "noremap <expr> f repmo#ZapKey('f')|sunmap f
@@ -301,6 +302,7 @@ let g:ctrlp_regexp = 1
 " colorscheme DevC++ 
 " colorscheme sf 
 colorscheme seoul256 
+" colorscheme gruvbox 
 " set t_Co=256
 " set t_ut=
 " colorscheme codedark
