@@ -41,52 +41,40 @@ autocmd VimLeave * silent !echo -ne "\<Esc>]50;CursorShape=0\x7"
 set rtp+=~/.vim/bundle/vundle.vim/
 "set rtp+=~/.fzf
 "n 'itchyny/lightline.vim'set number
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" Vundle let's you specify a plugin in a number of formats, but my favorite
-" allows you to grab plugins straight off of github, just specify the bundle
-" in the following format:
-" Bundle 'githubUsername/repoName'
+Plug 'JamshedVesuna/vim-markdown-preview'
 
-" Let vundle manage itself:
-Plugin 'VundleVim/vundle.vim'
-Plugin 'JamshedVesuna/vim-markdown-preview'
+Plug 'maximbaz/lightline-ale'
 
-Plugin 'maximbaz/lightline-ale'
+Plug 'kana/vim-altercmd'
+Plug 'Valloric/YouCompleteMe'
+Plug 'lazywei/vim-matlab'
 
-Plugin 'kana/vim-altercmd'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'lazywei/vim-matlab'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'lervag/vimtex'
+Plug 'vimwiki/vimwiki'
 
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'lervag/vimtex'
-Plugin 'vimwiki/vimwiki'
+Plug 'itchyny/lightline.vim'
 
-Plugin 'itchyny/lightline.vim'
+Plug 'flazz/vim-colorschemes'
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'tpope/vim-commentary'
+
+Plug 'w0rp/ale'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'ryanoasis/vim-devicons'
+call plug#end() 
+filetype plugin indent on
 "let g:ycm_server_python_interpreter='/usr/bin/python2.7'
 let g:ycm_server_python_interpreter='/usr/bin/python3.8'
 let g:ycm_max_diagnostics_to_display=400
-
-" Just a shitload of color schemes.
-" https://github.com/flazz/vim-colorschemes#current-colorschemes
-Plugin 'flazz/vim-colorschemes'
-
-" Fuzzy finder -- absolutely must have.
-Plugin 'ctrlpvim/ctrlp.vim'
-
-" Support for easily toggling comments.
-Plugin 'tpope/vim-commentary'
-
-
-Plugin 'w0rp/ale'
-
-Plugin 'scrooloose/nerdtree'
-
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'ryanoasis/vim-devicons'
-call vundle#end() 
-filetype plugin indent on
 " autocmd InsertEnter * norm zz
 
 
@@ -396,3 +384,5 @@ autocmd FileType markdown nnoremap <F5> :!pandoc %:p -o %:r.pdf<CR>
 hi Normal guibg=NONE ctermbg=NONE
 set thesaurus+=/home/oguz/.vim/spell/words.txt
 autocmd FileType markdown,tex setlocal spell
+
+autocmd BufWritePost exam.tex :!pdflatex -interaction=nonstopmode -halt-on-error -synctex=1 %
